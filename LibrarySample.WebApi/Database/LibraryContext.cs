@@ -12,6 +12,18 @@ namespace LibrarySample.WebApi.Database {
         public LibraryContext(DbContextOptions<LibraryContext> options) : base(options) { }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder) {
+            modelBuilder.Entity<Book>(book => {
+                book.ToTable(nameof(Book));
+            });
+
+            modelBuilder.Entity<Author>(author => {
+                author.ToTable(nameof(Author));
+            });
+
+            modelBuilder.Entity<Genre>(genre => {
+                genre.ToTable(nameof(Genre));
+            });
+
             base.OnModelCreating(modelBuilder);
         }
     }
