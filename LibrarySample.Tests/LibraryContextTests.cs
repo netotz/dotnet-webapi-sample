@@ -36,8 +36,6 @@ namespace LibrarySample.Tests {
 
             var genres = await context.Genres.ToListAsync();
             Assert.Empty(genres);
-
-            await context.Database.EnsureDeletedAsync();
         }
     }
 }
